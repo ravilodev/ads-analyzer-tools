@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopee Ads Analyzer — Ravilo Digi</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LOGIN PAGE
+════════════════════════════════════════════════ -->
+<div id="loginPage" class="active">
+  <div class="login-bg-shape s1"></div>
+  <div class="login-bg-shape s2"></div>
+  <div class="login-bg-shape s3"></div>
+
+  <div class="login-card">
+    <div class="login-logo">Ravilo<span>.</span></div>
+    <div class="login-subtitle">Shopee Ads Analyzer — Member Area</div>
+
+    <div class="login-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Eksklusif untuk Subscriber
+    </div>
+
+    <div id="loginError" class="login-error"></div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="email@kamu.com" autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Password kamu" autocomplete="current-password">
+    </div>
+
+    <button class="btn-primary" onclick="doLogin()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" y1="12" x2="3" y2="12"/>
+      </svg>
+      Masuk ke Dashboard
+    </button>
+
+    <div class="login-note">
+      Belum punya akses? Hubungi tim Ravilo Digi untuk berlangganan.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar" style="display:none">
+  <div class="logo">
+    <span class="logo-dot"></span>
+    Ravilo<span class="logo-accent">.</span>
+  </div>
+  <div class="nav-user">
+    <div class="user-chip">
+      <div class="user-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div class="user-info">
+        <span class="user-name" id="navUserName">—</span>
+        <span class="user-role">Subscriber</span>
+      </div>
+    </div>
+    <button class="btn-logout" onclick="doLogout()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </svg>
+      Keluar
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     APP PAGE
+════════════════════════════════════════════════ -->
+<div id="appPage">
+  <div class="app-container">
+
+    <!-- Hero -->
+    <div class="app-hero">
+      <div class="hero-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        Shopee Ads Analyzer
+      </div>
+      <h1>Iklanmu untung<br>atau rugi bulan ini?</h1>
+      <p>Masukkan data iklan Shopee-mu selama 1 bulan penuh dan dapatkan diagnosis lengkap dalam hitungan detik.</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+
+      <!-- LEFT: Form -->
+      <div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Input Data Iklan</div>
+              <div class="card-subtitle">Data 1 bulan penuh (lebih valid)</div>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <div class="month-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>Gunakan data <strong>1 bulan penuh</strong> dari dashboard Shopee Ads agar hasil analisis mencakup semua siklus penjualan dan hasilnya lebih akurat.</span>
+            </div>
+
+            <!-- Nama Produk -->
+            <div class="input-group">
+              <div class="input-label">
+                Nama Produk / Kampanye
+                <span class="input-hint">Untuk rekap histori</span>
+              </div>
+              <div class="input-wrap">
+                <span class="input-prefix">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                    <line x1="7" y1="7" x2="7.01" y2="7"/>
+                  </svg>
+                </span>
+                <input type="text" id="f_name" placeholder="Contoh: Sepatu Sneakers Abu">
+              </div>
+            </div>
+
+            <!-- HPP -->
+            <div class="input-group">
+              <div class="input-label">
+                Harga Beli / Modal per Produk
+                <span class="input-hint">HPP</span>
+              </div>
+              <div class="input-wrap">
+                <span class="input-prefix" style="color:var(--purple);font-weight:700;font-size:0.82rem;">Rp</span>
+                <input type="number" id="f_hpp" placeholder="50000" min="0">
+              </div>
+              <div class="input-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Harga kamu beli/produksi sebelum dijual
+              </div>
+            </div>
+
+            <!-- Harga Jual -->
+            <div class="input-group">
+              <div class="input-label">Harga Jual di Shopee</div>
+              <div class="input-wrap">
+                <span class="input-prefix" style="color:var(--purple);font-weight:700;font-size:0.82rem;">Rp</span>
+                <input type="number" id="f_price" placeholder="120000" min="0">
+              </div>
+              <div class="input-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Harga yang pembeli bayar (sebelum diskon)
+              </div>
+            </div>
+
+            <!-- Biaya Iklan -->
+            <div class="input-group">
+              <div class="input-label">
+                Total Biaya Iklan Bulan Ini
+                <span class="input-hint">Dari Shopee Ads</span>
+              </div>
+              <div class="input-wrap">
+                <span class="input-prefix" style="color:var(--purple);font-weight:700;font-size:0.82rem;">Rp</span>
+                <input type="number" id="f_adspend" placeholder="200000" min="0">
+              </div>
+              <div class="input-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Shopee Seller Center → Iklanku → Total Biaya
+              </div>
+            </div>
+
+            <!-- Revenue -->
+            <div class="input-group">
+              <div class="input-label">
+                Total Penjualan dari Iklan
+                <span class="input-hint">Revenue</span>
+              </div>
+              <div class="input-wrap">
+                <span class="input-prefix" style="color:var(--purple);font-weight:700;font-size:0.82rem;">Rp</span>
+                <input type="number" id="f_revenue" placeholder="800000" min="0">
+              </div>
+              <div class="input-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Shopee Ads → Ringkasan → "Penjualan dari Iklan"
+              </div>
+            </div>
+
+            <!-- Biaya Platform -->
+            <div class="input-group">
+              <div class="input-label">
+                Biaya Platform Shopee
+                <span class="input-hint">Default 25%</span>
+              </div>
+              <div class="input-wrap">
+                <span class="input-prefix" style="color:#9B8BB0;font-weight:700;font-size:0.85rem;">%</span>
+                <input type="number" id="f_platform" placeholder="25" min="0" max="60" value="25">
+              </div>
+              <div class="input-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Komisi Shopee + biaya admin + pajak. Cek di Seller Center → Keuangan → Rincian Biaya
+              </div>
+            </div>
+
+            <button class="btn-analyze" onclick="analyzeAds()">
+              <span id="analyzeBtnText">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                Analisis Iklan Saya
+              </span>
+            </button>
+
+            <button class="btn-reset" onclick="resetForm()">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+              </svg>
+              Reset Form
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Results -->
+      <div>
+        <div class="card" id="resultsCard">
+          <div class="card-header">
+            <div class="card-icon pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Hasil Analisis</div>
+              <div class="card-subtitle">Diagnosis otomatis iklan kamu</div>
+            </div>
+          </div>
+          <div class="card-body" id="resultsBody">
+            <div class="results-placeholder">
+              <div class="placeholder-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:48px;height:48px;opacity:0.45">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <p>Isi form dan klik Analisis untuk melihat diagnosis iklanmu di sini.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="card" id="recoCard" style="margin-top:20px;display:none">
+          <div class="card-header">
+            <div class="card-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title">Rekomendasi Strategi</div>
+              <div class="card-subtitle">Saran spesifik berdasarkan data kamu</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="reco-list" id="recoList"></div>
+            <button class="btn-copy" onclick="copyResult()">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Salin Ringkasan Hasil
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+      <div class="section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Histori Analisis
+      </div>
+      <div id="historyList"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
