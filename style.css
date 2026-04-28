@@ -171,12 +171,9 @@ body {
   z-index: 2;
   box-shadow: 0 32px 80px rgba(0,0,0,0.4);
 }
-.login-logo {
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 1.6rem;
-  color: white;
-  margin-bottom: 6px;
+.login-logo img{
+  width: 15px;
+  height: 15px;
 }
 .login-logo span { color: var(--pink); }
 .login-subtitle {
