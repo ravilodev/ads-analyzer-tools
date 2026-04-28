@@ -172,8 +172,8 @@ body {
   box-shadow: 0 32px 80px rgba(0,0,0,0.4);
 }
 .login-logo img{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 .login-logo span { color: var(--pink); }
 .login-subtitle {
