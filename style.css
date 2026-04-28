@@ -178,13 +178,12 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 1.5;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .login-logo img{
   width: 130px;
   height: 130px;
-  padding-bottom: 80px;
+  padding-bottom: 75px;
   margin: 0;
 }
 .login-logo span { color: var(--pink); }
