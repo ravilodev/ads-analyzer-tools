@@ -176,6 +176,7 @@ body {
   background: #fff;
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 .login-logo img{
   width: 80px;
