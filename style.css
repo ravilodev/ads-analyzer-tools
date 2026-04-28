@@ -172,12 +172,14 @@ body {
   box-shadow: 0 32px 80px rgba(0,0,0,0.4);
 }
 .login-logo {
-  margin: 10px 10px;
+  margin: 5px 5px;
   background: #fff;
 }
 .login-logo img{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
 }
 .login-logo span { color: var(--pink); }
 .login-subtitle {
