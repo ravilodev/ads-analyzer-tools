@@ -178,7 +178,7 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 0.2;
+  opacity: 0.8;
   border-radius: 15px;
 }
 .login-logo img{
