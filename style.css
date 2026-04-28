@@ -184,7 +184,7 @@ body {
 .login-logo img{
   width: 130px;
   height: 130px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   margin: 0;
 }
 .login-logo span { color: var(--pink); }
