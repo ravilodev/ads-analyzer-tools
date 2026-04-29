@@ -58,14 +58,9 @@ body {
   top: 0;
   z-index: 100;
 }
-.logo {
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--purple);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.logo img{
+  width: 120px;
+  height: 100px;
 }
 .logo-accent { color: var(--pink); }
 .logo-dot {
