@@ -60,7 +60,7 @@ body {
 }
 .logo img{
   width: 120px;
-  height: 100px;
+  height: 90px;
 }
 .logo-accent { color: var(--pink); }
 .logo-dot {
